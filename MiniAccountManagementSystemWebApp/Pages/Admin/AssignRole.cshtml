@@ -1,0 +1,29 @@
+﻿@page
+@model AssignRoleModel
+@{
+    ViewData["Title"] = "Assign Role to User";
+}
+
+<h2>Assign Role to User</h2>
+
+<form method="post">
+    <div>
+        <label>Email:</label>
+        <input asp-for="UserEmail" class="form-control" />
+    </div>
+    <div>
+        <label>Select Role:</label>
+        <select asp-for="RoleName" class="form-control">
+            <option value="Admin">Admin</option>
+            <option value="Accountant">Accountant</option>
+            <option value="Viewer">Viewer</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Assign Role</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p style="margin-top:10px; font-weight:bold">@Model.Message</p>
+}
