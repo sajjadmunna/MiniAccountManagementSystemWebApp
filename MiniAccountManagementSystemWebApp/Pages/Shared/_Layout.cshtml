@@ -526,7 +526,7 @@
                             <!--/ User -->
                         </ul>
                     </div>
-
+                    <partial name="_LoginPartial" />
                 </nav>
 
                 <!-- / Navbar -->
@@ -918,8 +918,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <partial name="_LoginPartial" />
+                                </div>                                
                             </div>
                             <!--/ Expense Overview -->
                             <!-- Transactions -->
@@ -1111,10 +1110,11 @@
 
     <!-- Page JS -->
     <script src="~/assets/js/dashboards-analytics.js"></script>
-    @* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
